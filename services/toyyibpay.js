@@ -3,6 +3,12 @@ const TOYYIBPAY_BASE = "https://toyyibpay.com/index.php/api";
 
 async function createBill({ orderRef, amount, customerName,
   customerEmail, customerPhone, description }) {
+
+  console.log("Return URL:", process.env.TOYYIBPAY_RETURN_URL)
+  console.log("Callback URL:", process.env.TOYYIBPAY_CALLBACK_URL)
+  console.log("Category:", process.env.TOYYIBPAY_CATEGORY)
+  console.log("Secret Key exists:", !!process.env.TOYYIBPAY_SECRET)
+
   const params = new URLSearchParams({
     userSecretKey: process.env.TOYYIBPAY_SECRET,
     categoryCode: process.env.TOYYIBPAY_CATEGORY,
